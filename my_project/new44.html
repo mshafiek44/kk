@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<input type="number" name="number" id='num'>
+<button onclick="randomLetters()">OK</button>
+<div id="buttons">
+	
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	function randomLetters(){
+		size = parseInt(document.getElementById("num").value)
+		var letters = 'QWERTYUIOPASDFGHLJKZXCVBNM';
+
+		var buttons = "<button>"+letters[parseInt(Math.random()*10000 % 25)]+"</button>";
+		for(var i = 1;i < size;i++){
+			buttons += "<button>"+letters[parseInt(Math.random()*10000 % 25)]+"</button>";
+		}	document.getElementById("buttons").innerHTML = buttons;
+
+	}
+	
+		var p1=new Object_Letter();
+    p1.Event_Target=btn.textContent;
+    p1.Event_Time=new Date();
+    p1.Event_Type=e.type;
+    var con=p1.Event_Target+""+p1.Event_Time+""+p1.Event_Type;
+    // localStorage.setItem('LeterClick',con);
+    if(localStorage.getItem("Generate")===null) {
+      	localStorage.setItem("Generate",con);
+    }
+    else{
+       var a= new Array(localStorage.getItem("Generate"));
+       a.push(con);
+       localStorage.setItem("Generate",a);
+    }
+ 
+
+
+</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
